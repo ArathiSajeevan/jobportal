@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post"action="/addjob/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h3>JOB DETAILS : </h3>
+        <label>Company Name </label>
+        <input type="text" name="cname" value={{companyname}}><br><br><br>
+        <label>Designation </label>
+        <input type="text" name="designation" value="{{jobtitle}}"><br><br>
+        <h3>APPLICANT DETAILS :</h3>
+        <label>Name </label>
+        <input type="text" name="name" value="{{user.name}}"><br><br><br>
+        <label>Email </label>
+        <input type="email" name="email" value="{{user.email}}"><br><br><br>
+        <label>Qualification </label>
+        <input type="text" name="qualification"><br><br><br>
+        <label>Phone No</label>
+        <input type="text" name="phone"><br><br><br>
+        <label for="experience">Experience</label>
+
+        <select id="experience" name="experience" type="text" placeholder="">
+          <option value="0-1">0-1</option>
+          <option value="1-2">1-2</option>
+          <option value="2-3">2-3</option>
+            <option value="3-4">3-4</option>
+            <option value="4-5">4-5</option>
+            <option value="5-6">5-6</option>
+            <option value="6-7">6-7</option>
+        </select>
+        <br><br>
+        <label>Upload your Resume</label>
+        <input type="file" name="image"><br><br>
+
+        <input type="submit" value="Submit">
+
+
+
+
+</form>
+</body>
+</html>
